@@ -2,16 +2,16 @@
 $(function() {
     $(".change-book").on("click", function(event) {
       var id = $(this).data("id");
-      var newSleep = $(this).data("newsleep");
+      var newBook = $(this).data("newbook");
   
-      var newSleepState = {
-        sleepy: newSleep
+      var newBookState = {
+        finished: newBook
       };
   
       // Send the PUT request.
       $.ajax("/api/bookList/" + id, {
         type: "PUT",
-        data: newSleepState
+        data: newBookState
       }).then(
         function() {
           console.log("changed sleep to", newSleep);
@@ -27,7 +27,7 @@ $(function() {
   
       var newBook = {
         name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
+        finished: $("[name=finished]:checked").val().trim()
       };
   
       // Send the POST request.
@@ -42,6 +42,8 @@ $(function() {
         }
       );
     });
+
+    // 
   
     // $(".delete-cat").on("click", function(event) {
     //   var id = $(this).data("id");
