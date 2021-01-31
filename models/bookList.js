@@ -1,7 +1,8 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var cat = {
+// create book variable reference booklist controller
+var book = {
   all: function(cb) {
     orm.all("bookList", function(res) {
       cb(res);
@@ -26,4 +27,4 @@ var cat = {
 };
 
 // Export the database functions for the controller (catsController.js).
-module.exports = cat;
+module.exports = book;
