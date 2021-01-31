@@ -1,0 +1,1 @@
+INSERT INTO bookList (name) values ('Rich Dad Poor Dad');
