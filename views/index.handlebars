@@ -1,9 +1,38 @@
-{{!-- add html header --}}
+<h1>RIP Books-A-Million</h1>
 
-<h1> RIP BOOKS A MILLION</h1>
+<h2>Finished!</h2>
 
 <ul>
-    {{#each bookList}}
-    {{#if read}}
-
+  {{#each bookList}}
+    {{#unless finished}}
+      {{> books/book-block finish=true}}
+    {{/unless}}
+  {{/each}}
 </ul>
+
+<h2>Need to finish!</h2>
+
+<ul>
+  {{#each bookList}}
+    {{#if finished}}
+      {{> books/book-block finish=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Book</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Book Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="finished">Have you read</label><br>
+    <input type="radio" name="finished" value="1" checked> Finished!<br>
+    <input type="radio" name="finished" value="0"> Awake
+  </div>
+
+  <button type="submit">Add Book</button>
+</form>
