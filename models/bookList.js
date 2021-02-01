@@ -19,11 +19,9 @@ var book = {
       cb(res);
     });
   },
-//   delete: function(condition, cb) {
-//     orm.delete("cats", condition, function(res) {
-//       cb(res);
-//     });
-//   }
+  delete(condition, cb) {
+    orm.delete('bookList', condition, (res) => cb(res));
+  },
 };
 
 // Export the database functions for the controller (catsController.js).
