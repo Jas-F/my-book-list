@@ -1,21 +1,21 @@
 <h1>RIP Books-A-Million</h1>
 
-<h2>Finished!</h2>
+<h2>Need to Finish!</h2>
 
 <ul>
   {{#each bookList}}
     {{#unless finished}}
-      {{> books/book-block finish=true}}
+      {{> bookList/book-block finish=true}}
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Need to finish!</h2>
+<h2>Finished!</h2>
 
 <ul>
   {{#each bookList}}
     {{#if finished}}
-      {{> books/book-block finish=false}}
+      {{> bookList/book-block finish=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -30,9 +30,9 @@
   </div>
 
   <div class="form-group">
-    <label for="finished">Have you read</label><br>
+    <label for="finished">Have you finished it</label><br>
     <input type="radio" name="finished" value="1" checked> Finished!<br>
-    <input type="radio" name="finished" value="0"> Awake
+    <input type="radio" name="finished" value="0"> Re-reading
   </div>
 
   <button type="submit">Add Book</button>
