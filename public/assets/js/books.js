@@ -14,7 +14,7 @@ $(function() {
         data: newBookState
       }).then(
         function() {
-          console.log("changed sleep to", newSleep);
+          console.log("changed to new state", newBookState);
           // Reload the page to get the updated list
           location.reload();
         }
