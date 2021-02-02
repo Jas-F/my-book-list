@@ -2,10 +2,10 @@
 $(function() {
     $(".change-book").on("click", function(event) {
       var id = $(this).data("id");
-      var newBook = $(this).data("newbook");
+      var newFinished = $(this).data("newBook");
   
       var newBookState = {
-        finished: newBook
+        finished: newFinished 
       };
   
       // Send the PUT request.
@@ -14,7 +14,7 @@ $(function() {
         data: newBookState
       }).then(
         function() {
-          console.log("changed to new state", newBookState);
+          console.log("changed to new state", newFinished);
           // Reload the page to get the updated list
           location.reload();
         }

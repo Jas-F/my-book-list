@@ -1,28 +1,27 @@
 <h1>KNOWLEDGE IS POWER!</h1>
 <h3>*Refresh page to update list</h3>
 
-<div class="container">
+
   <h2>Reading</h2>
-<div class="row">
-  <div class="col-6">
+
     <ul> 
       {{#each bookList}}
       {{#unless finished}}
-      {{> bookList/book-block finish=true}}
+      {{> bookList/book-block finish=false}}
       {{/unless}}
       {{/each}}
     </ul>
-  </div>
-  <div class="col-6">
+ 
+
     <h2>Finished</h2>
      <ul>
       {{#each bookList}}
-      {{#unless finished}}
+      {{#if finished}}
       {{> bookList/book-block finish=true}}
-      {{/unless}}
+      {{/if}}
       {{/each}}
     </ul>
-  </div>
+
 
 {{!-- decide if finished and unfinished --}}
 <div class="container">

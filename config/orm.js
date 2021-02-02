@@ -88,12 +88,12 @@ var orm = {
       cb(result);
     });
   },
-  delete(table, condition, cb) {
-    let queryString = `DELETE FROM ${table}`;
-    queryString += ' WHERE ';
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
     queryString += condition;
 
-    connection.query(queryString, (err, result) => {
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }

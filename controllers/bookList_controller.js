@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var book = require("../models/bookList.js");
+var book = require("../models/book.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
@@ -34,7 +34,7 @@ router.put("/api/bookList/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  book.update({
+  bookList.update({
     finished: req.body.finished
   }, condition, function(result) {
     if (result.changedRows == 0) {
@@ -46,15 +46,16 @@ router.put("/api/bookList/:id", function(req, res) {
   });
 });
 
-router.delete('/api/bookList/:id', (req, res) => {
+router.delete("/api/bookList/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   book.delete(condition, (result) => {
     if (result.affectedRows === 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
-    }
+    } else {
     res.status(200).end();
+    }
   });
 });
 
