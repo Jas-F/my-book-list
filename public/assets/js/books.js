@@ -45,7 +45,7 @@ $(function() {
 
     // 
   
-    $(".delete-cat").on("click", function(event) {
+    $(".delete-book").on("click", function(event) {
       var id = $(this).data("id");
   
       // Send the DELETE request.
