@@ -68,10 +68,6 @@ function viewEmployees() {
 * [Mysql](https://www.mysql.com/)
 
 
-## Deployed Link
-
-* [See Walk Through](https://drive.google.com/file/d/1EBszgNwq7ELFLu8ChNjBIlKkee-Gg-7_/view)
-
 ## License
 
 This project is licensed under the MIT License 
@@ -91,7 +87,7 @@ mysql
 
 **Jasmine Franklin C: 301-332-2313 E: jasminer.franklin@gmail** 
 
-- [Link to Portfolio Site](https://jas-f.github.io/responsive-portfolio/)
+- [Link to Portfolio Site](https://jas-f.github.io/updated-portfolio/)
 - [Link to Github](https://github.com/)
 - [Link to LinkedIn](https://www.linkedin.com/in/jasmine-franklin-8b08ba121)
 
