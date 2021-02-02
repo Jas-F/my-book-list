@@ -34,7 +34,7 @@ router.put("/api/bookList/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  bookList.update({
+  book.update({
     finished: req.body.finished
   }, condition, function(result) {
     if (result.changedRows == 0) {

@@ -1,27 +1,26 @@
 <h1>KNOWLEDGE IS POWER!</h1>
 <h3>*Refresh page to update list</h3>
 
-
-  <h2>Reading</h2>
-
-    <ul> 
+ <h2>Reading</h2>
+  
+   <ul> 
       {{#each bookList}}
       {{#unless finished}}
-      {{> bookList/book-block finish=false}}
+      {{> bookList/book-block finish=true}}
       {{/unless}}
       {{/each}}
     </ul>
- 
+   
+<h2>Finished</h2>
 
-    <h2>Finished</h2>
-     <ul>
+<ul>
       {{#each bookList}}
       {{#if finished}}
-      {{> bookList/book-block finish=true}}
+      {{> bookList/book-block finish=false}}
       {{/if}}
       {{/each}}
     </ul>
-
+   
 
 {{!-- decide if finished and unfinished --}}
 <div class="container">
@@ -38,7 +37,9 @@
   <div class="form-group">
     <label for="finished">Have you finished it</label><br>
     <input type="radio" name="finished" value="1" checked> Finished<br>
-    <input type="radio" name="finished" value="0"> Reading
+    <input type="radio" name="finished" value="0" checked> Reading<br>
+    
+
   </div>
 
   <button type="submit">Add Book</button>

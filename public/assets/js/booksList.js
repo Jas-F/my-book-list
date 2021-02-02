@@ -3,6 +3,7 @@ $(function() {
     $(".change-book").on("click", function(event) {
       var id = $(this).data("id");
       var newFinished = $(this).data("newBook");
+      var newFinished = true;
   
       var newBookState = {
         finished: newFinished 
@@ -45,19 +46,19 @@ $(function() {
 
     // 
   
-    $(".delete-book").on("click", function(event) {
-      var id = $(this).data("id");
+    // $(".delete-book").on("click", function(event) {
+    //   var id = $(this).data("id");
   
-      // Send the DELETE request.
-      $.ajax("/api/bookList/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted book", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
+    //   // Send the DELETE request.
+    //   $.ajax("/api/bookList/" + id, {
+    //     type: "DELETE"
+    //   }).then(
+    //     function() {
+    //       console.log("deleted book", id);
+    //       // Reload the page to get the updated list
+    //       location.reload();
+    //     }
+    //   );
+    // });
   });
   
